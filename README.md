@@ -39,7 +39,7 @@
 
 # Contact 
 
-### [Linkedin](https://www.linkedin.com/in)
+### [Linkedin](https://www.linkedin.com/in/volkanunluu/)
 ### Mail: Volkanunlu2203@gmail.com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
