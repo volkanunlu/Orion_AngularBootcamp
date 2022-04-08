@@ -28,16 +28,19 @@
 
 ## Aşağıdaki link üzerinden uygulamanın çalıştırıldığı haline göz atabilirsiniz.
 
-[Proje Önizleme Videosu](https://www.youtube.com/watch?v=BuIRLvunoUE&ab_channel=Volkan%C3%9Cnl%C3%BC)
+### [Proje Önizleme Videosu](https://www.youtube.com/watch?v=BuIRLvunoUE&ab_channel=Volkan%C3%9Cnl%C3%BC)
 
 ## Uygulama Pencereleri | Application Windows
 
+### [Uygulama görsellerine erişmek için tıklayınız.](https://github.com/volkanunlu/Orion_AngularBootcamp/tree/main/Application%20Windows)
 
 
 
-# Contact
 
-[Linkedin](https://www.linkedin.com/in)
+# Contact 
+
+### [Linkedin](https://www.linkedin.com/in)
+### Mail: Volkanunlu2203@gmail.com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
