@@ -1,0 +1,31 @@
+<header>
+    <div class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size:40px;" class="fas fa-dice-d20">&nbsp;
+            </i>
+            <strong style="font-size: 30px;">
+               O/ COMMERCE    <!--Proje adımız-->
+            </strong>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search product..">
+                                                                  <!--Arama çubuğumuzu evente bağladığımız bölüm-->
+            </div>
+            <span class="fas fa-search search-icon"></span>
+
+        </div>
+        <button routerLink="/cart" class="btn btn-primary">
+            <i style="font-size:30px;" class="fas fa-shopping-basket"></i>
+            <div style="font-size:10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button>
+        <button (click)="logout()"  routerLink="/login" class="btn btn-danger mx-2" style="border-radius: 3.25em;"> Log Out
+        </button>
+
+        <!--Çıkış yaptığımız butonumuza click verdiğimiz ve router ile yönlendirdiğimiz bölüm-->
+
+    </div>
+    
+   
+   
+
+
+</header>

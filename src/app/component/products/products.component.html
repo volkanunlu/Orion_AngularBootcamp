@@ -1,0 +1,115 @@
+<app-header></app-header>
+<div class="cart-top container-fluid">
+  
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter ('')">
+                <img [src]="allproducts" alt="">
+            <h6>All Products</h6>
+        </a>
+
+        </div>
+        <div class="item">
+            <a (click)="filter ('electronics')">
+                <img [src]="electronic" alt="">
+            <h6>Electronic</h6>
+        </a>
+
+        </div>
+        <div class="item">
+            <a (click)="filter ('fashion')"> 
+                <img [src]="personalcare" alt="">
+            <h6>Fashion</h6>
+        </a>
+
+        </div>
+        <div class="item">
+            <a (click)="filter ('jewelery')">
+                <img [src]="jewelry" alt="">
+            <h6>Jewelery</h6>
+        </a>
+
+        </div>
+        <div class="item">
+            <button class="btn btn-primary mt-4" (click)="toggle()">Change Theme</button>
+
+        </div>
+        
+            <div class="mx-auto">
+                <select class="btn btn-primary mt-4"  style="border-radius: 15px; background-color: rgba(0, 86, 166, 0.871); width: 180px; margin-top: 40px; margin-left: 180px; color: azure; border: 1px solid rgb(255, 255, 255);" (change)="changeCategory($event)" value="All">
+                
+                <option selected value=''>All products</option>    <!--Açılır menğ-->
+                <option value="electronics">Electronic</option>
+                <option value="fashion"> Fashion </option>
+                <option value="jewelery"> Jewelery </option>
+            
+              </select></div>
+
+
+
+        
+
+        
+        
+
+    </div>
+
+    
+
+<div *ngIf="listorcard" class="container"> <!--Düzeni değiştir butonu ile cart şeklinde listeliyoruz-->
+    <div class="row">
+        <ng-container  *ngFor="let item of filterCategory | filter:searchKey:'title'">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong>{{item.price}}₺</p>
+                <button class="btn btn-primarys" (click)="addtodetail(item)" routerLink="/detail">Product Detail</button>
+                <p></p>  <!--Ürün detayına click olayı ile eriştiğimiz bölüm addtodetail metodu ile-->
+
+                <button class="btn btn-primary" (click)="addtocart(item)">Add to cart</button><br>
+                        <!--Ürünü sepete ekleme clikc olayı ile eriştiğimiz bölüm addtocart metodu ile-->
+                
+              </div>
+
+
+
+        </ng-container>
+     
+    </div>
+</div>
+
+<div *ngIf="!listorcard" class="container">   <!--Düzeni değiştir butonu ile table halinde listeliyoruz-->
+    <div class="row">
+        <ng-container >
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">İmage</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Detay</th>
+                    <th scope="col">Sepete</th>
+
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of filterCategory | filter:searchKey:'title'" > <!--filtreleme işlemi-->
+                    <th scope="row"> <img src="{{item.image}}" alt=""></th>
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.price}}</td>
+                    <td><button class="btn btn-primarys" (click)="addtodetail(item)" routerLink="/detail">Detail</button></td>
+                    <td><button class="btn btn-primary" (click)="addtocart(item)">Add</button></td>
+
+                            
+                  </tr>     
+                </tbody>
+              </table>            
+        </ng-container>
+
+    </div>
+</div>

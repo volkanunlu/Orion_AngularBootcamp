@@ -1,0 +1,107 @@
+<ng-container *ngIf="products.length !=0" >  <!--Sepetimizde bir ürün varsa devreye girecek-->
+<div class="container">
+
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            Product no
+                        </th>
+                        <th>
+                            Product Name
+                        </th>
+                        <th>
+                            Product Image
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>Quantity</th>
+                        <th>
+                            Total
+                        </th>
+                        <th>
+                            Delete
+                        </th>                 <!--İhtiyacımız olan table başlıklarımızı girdik-->
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of products; let i= index">                <!--ngFor ile ürünlerimizde geziyoruz-->
+                        <td>{{i+1}}</td>
+                        <td>{{item.title}}</td>                             
+                        <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>   <!--interpolasyon işlemleri-->
+                        <td style="width: 25%;">{{item.description}}</td>
+                        <td style="width: 12%;">{{item.price}}</td>
+                        <td style="width: 12%;">{{item.quantity}}</td>
+                        <td style="width: 12%;">{{item.total}}</td>
+                        <td>
+                            <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td>
+                            <button (click)="emptycart()" class="btn btn-danger">Delete</button>
+                        </td>
+                        <td>
+                            <button routerLink="/products" class="btn btn-primary">Keep Shopping</button>
+                        </td>
+                        <td>
+                            <button (click)="ordercart()"  class="btn btn-success">Complete</button>
+                        </td>
+                        <td><strong>Total Price: {{grandTotal}} ₺</strong></td>
+                        
+                    </tr>
+                </tbody>
+    
+            </table>
+        </div>
+    </div>
+
+</div>
+</ng-container>
+
+
+<ng-container *ngIf="products.length==0 && !ordercomplete">  <!--Sepette herhangi bir ürün olmadığında devreye girecek-->
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">
+                My card
+            </h5>
+        </div>
+        <div class="center">
+            <img [src]="emptycartimage" alt="">
+            <h4>Your cart is empty!</h4>
+            <h6>You haven't added any products to your cart yet..</h6>
+            <button routerLink="/products" class="btn btn-primary">
+                Keep Shopping
+            </button>
+        </div>
+    </div>
+</ng-container> 
+
+<ng-container *ngIf="products.length==0 && ordercomplete">  <!--Sipariş tamamla butonu aktif oldğunda devreye girecek-->
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">
+                My card
+            </h5>
+        </div>
+        <div class="center">
+            <img [src]="ordercartimage" alt="">
+            <h4>Your order is complete.!</h4>
+            <h6>Thank you for choosing us.!</h6>
+            <button routerLink="/products" class="btn btn-primary">
+                Keep Shopping
+            </button>
+            
+        </div>
+    </div>
+</ng-container>
+

@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="container">
+
+    <div class="detail-table">
+        <div class="detail-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            Product No        <!--Sırası ile ürüne ait başlıkları girdik.-->
+                        </th>
+                        <th>
+                            Product Name
+                        </th>
+                        <th>
+                            Product Image
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        
+                        
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of products; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.title}}</td>
+                        <td><img style="width: 222px;" src="{{item.image}}" alt=""></td>
+                        <td style="width: 40%;">{{item.description}}</td>
+                        <td style="width: 12%;">{{item.price}}</td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        
+                        <td>
+                            <button routerLink="/products" class="btn btn-primary" >Keep Shopping</button>
+                        </td>
+                        <!--Router ile yönlendirmemizi yaptık.Ayrıca str ngFor ile ürünleri gezip interpolasyon uyguladık-->
+                        
+                        
+                    </tr>
+                </tbody>
+    
+            </table>
+
+          
+
+        </div>
+    </div>
+
+</div>

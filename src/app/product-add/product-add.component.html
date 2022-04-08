@@ -1,0 +1,58 @@
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h3 class="title text-center">Ürün Ekle</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="mt-3">
+                        <div class="form-group">
+                            <label for="name">Ürün Adı:</label>
+                            <input name="name" formControlName="name"  type="text" id="productName" class="form-control"
+                                placeholder="Ürün Adı" />
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="form-group">
+                            <label for="price">Ürün Fiyatı:</label>
+                            <input name="price" formControlName="price" type="number" id="productPrice" class="form-control"
+                                placeholder="Ürün Fiyatı" />
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="form-group">
+                            <label for="description">Ürün Açıklaması:</label>
+                            <input name="description" formControlName="description" type="text" id="productDescription" class="form-control"
+                                placeholder="Ürün Açıklaması" />
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="form-group">
+                            <label for="image">Ürün Resmi:</label>
+                            <input name="image" formControlName="image" type="text" id="productImageUrl" class="form-control"
+                                placeholder="Ürün Resmi" />
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="categoryId">Ürün Kategorisi:</label>
+                        <select class="form-select form-select-sm" name="categoryId" formControlName="categoryId" type="text" id="productCategoryId"
+                            class="form-control" placeholder="Ürün Kategorisi">
+                            <option value="">Tüm Ürünler</option>    <!--Açılır menü-->
+                            <option value="">Elektronik</option>
+                            <option value="">Giysi</option>
+                            <option value="">Takı</option>
+
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-dark" style="margin-left: 1240px;">Ekle</button>
+                <button routerLink="/products" class="btn btn-fill btn-success"  style="margin-left: 140px;">Ürünlere git</button>
+                <button (click)="logout()" routerLink="/adminlogin" class="btn btn-fill btn-danger"  style="margin-left: 140px;">Çıkış yap</button>
+                
+                <!--Admin ürün ekleme ekranında yarattığımız alanların kodları.Router, click olayları ile ürünlere gidip çıkış işlemi sağlanıyor.-->
+
+            </div>
+        </div>
+    </div>

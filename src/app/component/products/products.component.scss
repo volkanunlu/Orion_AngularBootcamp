@@ -1,0 +1,91 @@
+.card-top{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border : 1px solid rgba(0,0,0,0.2);
+    border-radius: .25rem;
+
+}
+
+.item img{
+    width: 65px;
+
+}
+.item{
+    margin: 2px 30px;
+    text-align: center;
+}
+
+.item a:hover{
+    color:blue;
+}
+
+.card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 20px;
+    text-align: center;
+    font-family: arial;
+}
+
+
+.card img{
+   width: 200px;
+   height: 200px;
+   margin-bottom: 15px;
+   transition: 0.3s ease-in-out;
+
+
+}
+.card img:hover{
+    transition: 0.4s ease-in-out;
+    transform: scale(1.1);
+    
+}
+
+.btn-primarys{
+    background-color: green;
+    // color: aliceblue;
+    border-radius: 1.25rem;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+
+.btn-primary{
+    background-color: rgb(4, 88, 184);
+    // color: aliceblue;
+    border-radius: 1.25rem;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+
+}
+
+.table img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+
+}
+.card button:hover {
+    opacity: 0.7;
+  }
+
